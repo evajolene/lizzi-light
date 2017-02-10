@@ -1,6 +1,6 @@
 # LizziLight
 
-LizziLight is a collection of shaders for the Unity engine that allows for a "cutout" lighting effect instead of the standard additive lighting.
+LizziLight is a collection of shaders for the Unity engine that allow for a "cutout" lighting effect instead of the standard additive lighting.
 
 ![Example image showing what LizziLight looks like.](https://github.com/evajolene/lizzi-light/blob/master/GitHubImages/Screenshot.png)
 
