@@ -1,33 +1,36 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class PostProcessRenderer : MonoBehaviour
+namespace LizziEngine.Rendering
 {
-    //Camera to capture image from, to feed to the post processing shader.
-    public Camera captureCamera;
-    //Material to use for post processing.
-    public Material postProcessMaterial;
-
-    private int previousScreenWidth, previousScreenHeight;
-
-    void Update()
+    [RequireComponent(typeof(Camera))]
+    public class PostProcessRenderer : MonoBehaviour
     {
-        if (previousScreenHeight != Screen.height || previousScreenWidth != Screen.width)
+        //Camera to capture image from, to feed to the post processing shader.
+        public Camera captureCamera;
+        //Material to use for post processing.
+        public Material postProcessMaterial;
+
+        private int previousScreenWidth, previousScreenHeight;
+
+        void Update()
         {
-            if (captureCamera.targetTexture != null)
+            if (previousScreenHeight != Screen.height || previousScreenWidth != Screen.width)
             {
-                captureCamera.targetTexture.Release();
+                if (captureCamera.targetTexture != null)
+                {
+                    captureCamera.targetTexture.Release();
+                }
+
+                captureCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24, RenderTextureFormat.ARGB32);
+
+                previousScreenWidth = Screen.width;
+                previousScreenHeight = Screen.height;
             }
-
-            captureCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24, RenderTextureFormat.ARGB32);
-
-            previousScreenWidth = Screen.width;
-            previousScreenHeight = Screen.height;
         }
-    }
 
-    void OnPostRender()
-    {
-        Graphics.Blit(captureCamera.targetTexture, postProcessMaterial);
+        void OnPostRender()
+        {
+            Graphics.Blit(captureCamera.targetTexture, postProcessMaterial);
+        }
     }
 }

@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class ShaderReplacer : MonoBehaviour
+namespace LizziEngine.Rendering
 {
-    public Shader replacementShader;
-
-    void Start()
+    [RequireComponent(typeof(Camera))]
+    public class ShaderReplacer : MonoBehaviour
     {
-        Camera camera = GetComponent<Camera>();
+        public Shader replacementShader;
 
-        if (replacementShader != null)
+        void Start()
         {
-            camera.SetReplacementShader(replacementShader, "RenderType");
+            Camera camera = GetComponent<Camera>();
+
+            if (replacementShader != null)
+            {
+                camera.SetReplacementShader(replacementShader, "RenderType");
+            }
         }
     }
 }

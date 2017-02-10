@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace LD37
+namespace LizziEngine.Rendering
 {
     public class FlatAmbientLight : MonoBehaviour
     {
