@@ -10,10 +10,11 @@ namespace LizziEngine.Rendering
         //Material to use for post processing.
         public Material postProcessMaterial;
 
-        private int previousScreenWidth, previousScreenHeight;
+        private int previousScreenWidth = 0, previousScreenHeight = 0;
 
         void Update()
         {
+            //Create new render texture when screen is resized.
             if (previousScreenHeight != Screen.height || previousScreenWidth != Screen.width)
             {
                 if (captureCamera.targetTexture != null)
