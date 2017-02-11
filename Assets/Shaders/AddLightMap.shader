@@ -31,6 +31,7 @@
 			{
 				float4 color = tex2D(_MainTex, Input.uv);
 
+				//Red indicates light, green indicates shadow, and blue indicates a transparent object.
 				if (color.b == 1.0 || (color.r == 1.0 && color.g == 0.0))
 				{
 					color = AdditiveLightColor * AdditiveLightColor.a;
@@ -63,12 +64,8 @@
 			{
 				float4 color = tex2D(_MainTex, Input.uv);
 
-				/*
-					Red indicates light, green indicates shadow, and blue indicates a transparent object.
-					This messy check is meant to test if the light/shadow was meant for either
-					the transparent object, or the object behind it!
-				*/
-				if (color.r == 1.0 && ((color.g == 0.0 && color.b == 0.0) || color.b == 1.0))
+				//Red indicates light, green indicates shadow, and blue indicates a transparent object.
+				if (color.b == 1.0 || (color.r == 1.0 && color.g == 0.0))
 				{
 					color.rgb = MultiplyLightColor.rgb * MultiplyLightColor.a;
 				}
