@@ -52,7 +52,7 @@
 			{
 				VertexOutput output;
 
-				output.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				output.pos = UnityObjectToClipPos(v.vertex);
 				TRANSFER_SHADOW(output);
 
 				return output;
@@ -114,7 +114,7 @@
 			{
 				VertexOutput output;
 
-				output.position = mul(UNITY_MATRIX_MVP, Input.position);
+				output.position = UnityObjectToClipPos(Input.position);
 				output.lightPosition = mul(unity_WorldToLight, mul(unity_ObjectToWorld, Input.position));
 
 				return output;
@@ -222,7 +222,7 @@
 			{
 				VertexOutput output;
 
-				output.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				output.pos = UnityObjectToClipPos(v.vertex);
 				output.uv = v.uv;
 				TRANSFER_SHADOW(output);
 
@@ -301,7 +301,7 @@
 			{
 				VertexOutput output;
 
-				output.position = mul(UNITY_MATRIX_MVP, Input.position);
+				output.position = UnityObjectToClipPos(Input.position);
 				output.uv = Input.uv;
 				output.lightPosition = mul(unity_WorldToLight, mul(unity_ObjectToWorld, Input.position));
 

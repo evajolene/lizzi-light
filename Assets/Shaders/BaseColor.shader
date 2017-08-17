@@ -44,7 +44,7 @@
 			{
 				VertexOutput output;
 
-				output.position = mul(UNITY_MATRIX_MVP, Input.position);
+				output.position = UnityObjectToClipPos(Input.position);
 				output.uv = Input.uv;
 
 				return output;
@@ -57,5 +57,7 @@
 
 			ENDCG
 		}
+
+		UsePass "LizziLight/Helpers/AlphaCutoutShadowPass/SHADOWCASTER"
 	}
 }

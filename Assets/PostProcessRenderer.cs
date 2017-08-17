@@ -12,6 +12,11 @@ namespace LizziEngine.Rendering
 
         private int previousScreenWidth = 0, previousScreenHeight = 0;
 
+        void Start()
+        {
+            captureCamera.depthTextureMode = DepthTextureMode.Depth;
+        }
+
         void Update()
         {
             //Create new render texture when screen is resized.
