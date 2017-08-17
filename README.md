@@ -1,8 +1,16 @@
 # LizziLight
 
-LizziLight is a collection of shaders for the Unity engine that allows for a "cutout" lighting effect instead of the standard additive lighting.
+LizziLight is a collection of shaders for the Unity engine that creates a masked lighting effect with stacked lights.
 
-![Example image showing what LizziLight looks like.](https://github.com/evajolene/lizzi-light/blob/master/GitHubImages/Screenshot.png)
+## Effects
+
+Multiply shader: it's the standard post effect using LizziLight. Multiplies a given color with the texture if there's light.
+
+![Image showing the described lighting effect](https://github.com/evajolene/lizzi-light/blob/master/GitHubImages/Multiply.png)
+
+MultiplyPlusDepth shader: Multiply shader plus an additive gradient based on camera depth.
+
+![Image showing the described lighting effect](https://github.com/evajolene/lizzi-light/blob/master/GitHubImages/MultiplyPlusDepth.png)
 
 ## Before You Use LizziLight
 
