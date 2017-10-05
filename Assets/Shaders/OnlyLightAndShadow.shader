@@ -171,7 +171,7 @@
 		{
 			"RenderType" = "AlphaCutout"
 			"IgnoreProjector" = "True"
-			"Queue" = "Transparent"
+			"Queue" = "AlphaTest"
 		}
 
 		Cull Off
@@ -251,8 +251,7 @@
 					discard;
 				}
 
-				//The blue value is 0.004 (estimated 1/255 color value) to indicate that this is a transparent object.
-				return float4(0.0, shadowAttenuation, 0.004, 1.0);
+				return float4(0.0, shadowAttenuation, 0.0, 1.0);
 			}
 
 			ENDCG
@@ -346,9 +345,6 @@
 				if (attenuation > 0.1 && cookieAttenuation > 0.1 && alpha >= AlphaCutoff)
 				{
 					color.r = 1.0;
-
-					//Indicate that the lighting is actually for the alpha cutout with a 1.0 blue value.
-					color.b = 1.0;
 				}
 				else
 				{

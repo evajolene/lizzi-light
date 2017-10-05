@@ -57,7 +57,7 @@
 
 			ENDCG
 		}
-
+		
 		UsePass "LizziLight/Helpers/AlphaCutoutShadowPass/SHADOWCASTER"
 	}
 }
