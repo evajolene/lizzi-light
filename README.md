@@ -1,6 +1,6 @@
 # LizziLight
 
-LizziLight is a collection of shaders for the Unity engine that creates a masked lighting effect with stacked lights.
+LizziLight is a collection of shaders for the Unity engine that generates a flat lighting mask to create seamless intersection of lights.
 
 ## Before You Use LizziLight
 
