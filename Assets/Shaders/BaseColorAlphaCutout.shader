@@ -12,7 +12,7 @@
 		Tags
 		{
 			"RenderType" = "AlphaCutout"
-			"Queue" = "Transparent"
+			"Queue" = "AlphaTest"
 		}
 
 		Cull Off

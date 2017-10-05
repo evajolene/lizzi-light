@@ -58,8 +58,8 @@
 				float4 outColor = float4(0, 0, 0, 1);
 
 				float4 color = tex2D(_MainTex, Input.uv);
-				//Red indicates light, green indicates shadow, and blue indicates a transparent object.
-				if (color.b == 1.0 || (color.r == 1.0 && color.g == 0.0))
+				//Red indicates light and green indicates shadow.
+				if (color.r == 1.0 && color.g == 0.0)
 				{
 					float depth = Linear01Depth(tex2D(_CameraDepthTexture, UNITY_PROJ_COORD(Input.screenPosition)).r) * 32.0;
 					outColor = AdditiveDepthColor * AdditiveDepthColor.a * depth;
@@ -89,8 +89,8 @@
 			{
 				float4 color = tex2D(_MainTex, Input.uv);
 				float4 outColor = float4(0, 0, 0, 1);
-				//Red indicates light, green indicates shadow, and blue indicates a transparent object.
-				if (color.b == 1.0 || (color.r == 1.0 && color.g == 0.0))
+				//Red indicates light and green indicates shadow.
+				if (color.r == 1.0 && color.g == 0.0)
 				{
 					outColor.rgb = max(LightColor.rgb * LightColor.a, UNITY_LIGHTMODEL_AMBIENT);
 				}
