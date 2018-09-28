@@ -4,7 +4,7 @@ LizziLight is a collection of shaders for the Unity engine that generates a flat
 
 ## Before You Use LizziLight
 
-If you'd like to use the shaders, please credit me in your project as Eva Jolene. I would also appreciate a donation if you like using it, but it's not required! You can donate here: https://www.paypal.me/evajolene
+If you'd like to use the shaders, please credit me in your project as Eva Jolene.
 
 ## Effects
 
